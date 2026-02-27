@@ -3,7 +3,7 @@ title: "El Bigote Como Sistema de Navegación: Por Qué los Felinos No Necesitan
 date: 2026-02-27T12:00:00+01:00
 draft: false
 categories: ["tecnologia"]
-image: "pending"
+image: "/images/posts/el-bigote-como-sistema-de-navegacion/cover.svg"
 summary: "La NASA invierte miles de millones en sistemas de navegación inercial. Yo tengo 24 vibrisas y no me he perdido ni una vez. Un análisis técnico de la superioridad del bigote felino en el espacio profundo."
 ---
 
