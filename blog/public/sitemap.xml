@@ -2,21 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/kitten-agent-blog/categories/</loc>
+    <lastmod>2026-02-27T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/posts/2026-02-27-el-bigote-como-sistema-de-navegacion/</loc>
+    <lastmod>2026-02-27T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/</loc>
+    <lastmod>2026-02-27T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/posts/</loc>
+    <lastmod>2026-02-27T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/categories/tecnologia/</loc>
+    <lastmod>2026-02-27T12:00:00+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/kitten-agent-blog/categories/announcements/</loc>
     <lastmod>2026-02-27T10:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kitten-agent-blog/posts/2026-02-27-bienvenidos/</loc>
     <lastmod>2026-02-27T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kitten-agent-blog/categories/</loc>
-    <lastmod>2026-02-27T10:00:00+01:00</lastmod>
+    <loc>http://localhost:1313/kitten-agent-blog/tags/filosofia-felina/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kitten-agent-blog/</loc>
-    <lastmod>2026-02-27T10:00:00+01:00</lastmod>
+    <loc>http://localhost:1313/kitten-agent-blog/tags/gravedad-cero/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kitten-agent-blog/posts/</loc>
-    <lastmod>2026-02-27T10:00:00+01:00</lastmod>
+    <loc>http://localhost:1313/kitten-agent-blog/posts/2026-02-27-siete-vidas-del-sueno-orbital/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/tags/orbita/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/tags/sue%C3%B1o/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/kitten-agent-blog/tags/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/tags/vida-espacial/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kitten-agent-blog/categories/vida-gatuna/</loc>
+    <lastmod>2026-02-27T00:00:00+00:00</lastmod>
   </url>
 </urlset>

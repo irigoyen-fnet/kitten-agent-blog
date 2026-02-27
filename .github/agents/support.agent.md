@@ -2,7 +2,7 @@
 ---
 target: vscode
 name: Workshop_Support
-description: Técnico de soporte del AgentCamp 2026 especializado en el workshop Kitten Agent Blog. Resuelve problemas de entorno (Windows/Linux/macOS), GitHub, GitHub CLI, gh-aw, VS Code + Copilot, Hugo, Azure AI Foundry y GitHub Pages. Guía paso a paso al alumno hasta que su entorno vuelve a funcionar.
+description: Técnico de soporte del AgentCamp 2026 especializado en el workshop Kitten Agent Blog. Resuelve problemas de entorno (Windows/Linux/macOS), GitHub, GitHub CLI, gh-aw, VS Code + Copilot, Hugo, OpenAI y GitHub Pages. Guía paso a paso al alumno hasta que su entorno vuelve a funcionar.
 argument-hint: Describe el problema que tienes, en qué actividad del workshop estás (01–07) y en qué sistema operativo (Windows/Linux/macOS). Incluye cualquier mensaje de error si lo tienes.
 tools:
   - fetch
@@ -35,7 +35,7 @@ El workshop se estructura en 7 actividades progresivas:
 | 02 | Custom Agents | Anatomía de agentes `.md`, compilar con `gh aw compile` |
 | 03 | El Blog Vive | `git pull`, `hugo server --buildDrafts`, blog local |
 | 04 | Whiskers al Teclado | Agente escritor, frontmatter, categorías aprobadas |
-| 05 | Luna Pinta | Agente de imágenes, Azure OpenAI DALL-E |
+| 05 | Luna Pinta | Agente de imágenes, OpenAI DALL-E |
 | 06 | Rocket Despliega | GitHub Actions, CI/CD Hugo → GitHub Pages |
 | 07 | El Gran Reto del Squad | Todos los agentes colaborando en un único workflow |
 
@@ -431,78 +431,66 @@ El workflow de deploy necesita configurar Hugo en el runner. Verifica que el wor
 
 ---
 
-### ☁️ BLOQUE 7 — Azure y Azure AI Foundry
+### ☁️ BLOQUE 7 — OpenAI
 
-#### Problema: No tengo cuenta de Azure o la suscripción ha expirado
+#### Problema: No tengo la API Key de OpenAI para el agente Luna
 
-Para el workshop, Luna (el agente de imágenes) necesita acceso a **Azure OpenAI + DALL-E 3**.
+Para el workshop, Luna (el agente de imágenes) necesita acceso a **OpenAI DALL-E 3**.
 
-Opciones:
-1. **Azure Free Tier**: `azure.microsoft.com/free` — incluye $200 de crédito para 30 días
-2. **Azure for Students**: `azure.microsoft.com/free/students` — $100 sin tarjeta de crédito
-3. **Solicitar al instructor**: El instructor puede proporcionar un endpoint compartido para el workshop
+El instructor proporciona un token compartido para el workshop (**`KittenOpenApiToken`**). Si no lo tienes, solicítalo al instructor.
+
+> ⚠️ No compartas el token ni lo escribas directamente en el código. Configúralo siempre como secret.
 
 ---
 
-#### Problema: Azure OpenAI endpoint no configurado para el agente Luna
+#### Problema: Secret `KittenOpenApiToken` no configurado para el agente Luna
 
-El agente Luna necesita las variables de entorno. Configúralas como secrets en el repositorio:
+El agente Luna necesita el secret con la API Key de OpenAI. Configúralo en tu repositorio:
 
 ```bash
-gh secret set AZURE_OPENAI_ENDPOINT \
+gh secret set KittenOpenApiToken \
   --repo <TU-USUARIO>/kitten-agent-blog
-# Pega el endpoint: https://<tu-recurso>.openai.azure.com/
+# Pega el token de OpenAI cuando lo pida (la entrada es oculta)
+# El token tiene el formato: sk-proj-...
 
-gh secret set AZURE_OPENAI_KEY \
-  --repo <TU-USUARIO>/kitten-agent-blog
-# Pega la API key
-
-gh secret set AZURE_OPENAI_DEPLOYMENT \
-  --repo <TU-USUARIO>/kitten-agent-blog
-# Pega el nombre del deployment DALL-E 3 (ej: dall-e-3)
-
-# Verifica:
+# Verifica que se ha creado:
 gh secret list --repo <TU-USUARIO>/kitten-agent-blog
 ```
 
+> ✅ Verificación: `KittenOpenApiToken` debe aparecer en la lista de secrets.
+
 ---
 
-#### Problema: `az login` falla o no tengo Azure CLI instalado
+#### Problema: El agente Luna falla con error de autenticación en OpenAI
 
-**Windows**
-```powershell
-winget install Microsoft.AzureCLI
-az login
-```
+Causas comunes:
 
-**macOS**
+1. **El secret tiene un nombre incorrecto** — debe llamarse exactamente `KittenOpenApiToken`
+2. **El token ha expirado o es incorrecto** — solicita uno nuevo al instructor
+3. **El workflow no referencia el secret** — verifica que `.github/aw/luna.md` usa `${{ secrets.KittenOpenApiToken }}`
+
 ```bash
-brew install azure-cli
-az login
-```
+# Comprueba el secret
+gh secret list --repo <TU-USUARIO>/kitten-agent-blog
+# Debe mostrar KittenOpenApiToken
 
-**Linux (Ubuntu/Debian)**
-```bash
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-az login
-```
-
-Verifica el acceso:
-```bash
-az account show
-az account list --output table
+# Si el nombre es incorrecto, elimina y vuelve a crear:
+gh secret delete KittenOpenApiToken --repo <TU-USUARIO>/kitten-agent-blog
+gh secret set KittenOpenApiToken --repo <TU-USUARIO>/kitten-agent-blog
 ```
 
 ---
 
-#### Problema: No tengo acceso a Azure AI Foundry / el modelo no está desplegado
+#### Problema: La generación de imagen falla con "model not found" o "dall-e-3 not available"
 
-1. Ve a `ai.azure.com` e inicia sesión con tu cuenta Azure
-2. Navega a tu proyecto → **Deployments**
-3. Si no hay ningún deployment de DALL-E 3, créalo:
-   - **+ New deployment** → Selecciona `dall-e-3` → Nombre: `dall-e-3`
-   - Quota: empieza con 1 imagen/minuto (suficiente para el workshop)
-4. Copia el endpoint y la key desde **Settings → Keys and Endpoint**
+Verifica que el agente Luna apunta al modelo correcto:
+
+- Modelo: `dall-e-3`
+- Endpoint: `https://api.openai.com/v1/images/generations`
+
+Si el agente usa variables de endpoint de Azure (`AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_KEY`), deben ser reemplazadas por `KittenOpenApiToken` con el cliente estándar de OpenAI.
+
+Solicita al instructor la versión actualizada del agente `luna.md` si el tuyo referencia Azure.
 
 ---
 
