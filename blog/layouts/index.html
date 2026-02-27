@@ -34,7 +34,7 @@
         {{ with .Params.image }}
         {{ if and (ne . "") (ne . "pending") }}
         <div class="h-44 overflow-hidden">
-          <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover" />
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover" />
         </div>
         {{ end }}
         {{ end }}
