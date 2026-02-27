@@ -437,18 +437,18 @@ El workflow de deploy necesita configurar Hugo en el runner. Verifica que el wor
 
 Para el workshop, Luna (el agente de imágenes) necesita acceso a **OpenAI DALL-E 3**.
 
-El instructor proporciona un token compartido para el workshop (**`KittenOpenApiToken`**). Si no lo tienes, solicítalo al instructor.
+El instructor proporciona un token compartido para el workshop (**`ImageToken`**). Si no lo tienes, solicítalo al instructor.
 
 > ⚠️ No compartas el token ni lo escribas directamente en el código. Configúralo siempre como secret.
 
 ---
 
-#### Problema: Secret `KittenOpenApiToken` no configurado para el agente Luna
+#### Problema: Secret `ImageToken` no configurado para el agente Luna
 
 El agente Luna necesita el secret con la API Key de OpenAI. Configúralo en tu repositorio:
 
 ```bash
-gh secret set KittenOpenApiToken \
+gh secret set ImageToken \
   --repo <TU-USUARIO>/kitten-agent-blog
 # Pega el token de OpenAI cuando lo pida (la entrada es oculta)
 # El token tiene el formato: sk-proj-...
@@ -457,7 +457,7 @@ gh secret set KittenOpenApiToken \
 gh secret list --repo <TU-USUARIO>/kitten-agent-blog
 ```
 
-> ✅ Verificación: `KittenOpenApiToken` debe aparecer en la lista de secrets.
+> ✅ Verificación: `ImageToken` debe aparecer en la lista de secrets.
 
 ---
 
@@ -465,18 +465,18 @@ gh secret list --repo <TU-USUARIO>/kitten-agent-blog
 
 Causas comunes:
 
-1. **El secret tiene un nombre incorrecto** — debe llamarse exactamente `KittenOpenApiToken`
+1. **El secret tiene un nombre incorrecto** — debe llamarse exactamente `ImageToken`
 2. **El token ha expirado o es incorrecto** — solicita uno nuevo al instructor
-3. **El workflow no referencia el secret** — verifica que `.github/aw/luna.md` usa `${{ secrets.KittenOpenApiToken }}`
+3. **El workflow no referencia el secret** — verifica que `.github/aw/luna.md` usa `${{ secrets.ImageToken }}`
 
 ```bash
 # Comprueba el secret
 gh secret list --repo <TU-USUARIO>/kitten-agent-blog
-# Debe mostrar KittenOpenApiToken
+# Debe mostrar ImageToken
 
 # Si el nombre es incorrecto, elimina y vuelve a crear:
-gh secret delete KittenOpenApiToken --repo <TU-USUARIO>/kitten-agent-blog
-gh secret set KittenOpenApiToken --repo <TU-USUARIO>/kitten-agent-blog
+gh secret delete ImageToken --repo <TU-USUARIO>/kitten-agent-blog
+gh secret set ImageToken --repo <TU-USUARIO>/kitten-agent-blog
 ```
 
 ---
@@ -488,7 +488,7 @@ Verifica que el agente Luna apunta al modelo correcto:
 - Modelo: `dall-e-3`
 - Endpoint: `https://api.openai.com/v1/images/generations`
 
-Si el agente usa variables de endpoint de Azure (`AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_KEY`), deben ser reemplazadas por `KittenOpenApiToken` con el cliente estándar de OpenAI.
+Si el agente usa variables de endpoint de Azure (`AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_KEY`), deben ser reemplazadas por `ImageToken` con el cliente estándar de OpenAI.
 
 Solicita al instructor la versión actualizada del agente `luna.md` si el tuyo referencia Azure.
 
