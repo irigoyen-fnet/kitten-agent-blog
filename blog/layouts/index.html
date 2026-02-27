@@ -1,0 +1,93 @@
+{{ define "main" }}
+<div class="max-w-2xl mx-auto">
+
+  <!-- Hero header -->
+  <header class="mb-12 text-center py-10">
+    <div class="text-6xl mb-5">🐱🚀</div>
+    <h1 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+      Kitten Agent Blog
+    </h1>
+    <p class="text-gray-400 text-lg max-w-md mx-auto leading-relaxed">
+      {{ .Site.Params.tagline }}
+    </p>
+    <a href="{{ "/posts/" | relURL }}"
+       class="inline-block mt-6 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
+       style="background:rgba(0,229,255,.1); border:1px solid rgba(0,229,255,.3); color:#00e5ff;">
+      Ver todos los artículos →
+    </a>
+  </header>
+
+  <!-- Latest posts -->
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ if $posts }}
+  <section>
+    <h2 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">
+      Últimas publicaciones
+    </h2>
+    <div class="space-y-6">
+      {{ range first 5 ($posts.ByDate.Reverse) }}
+      <article class="rounded-xl overflow-hidden transition-all hover:border-cyan-400/30"
+               style="background:#1a1a35; border:1px solid rgba(255,255,255,.07);">
+
+        {{ with .Params.image }}
+        {{ if and (ne . "") (ne . "pending") }}
+        <div class="h-40 overflow-hidden">
+          <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="w-full h-full object-cover" />
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div class="p-6">
+          {{ with .Params.categories }}
+          <div class="flex flex-wrap gap-2 mb-3">
+            {{ range . }}
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  style="background:rgba(0,229,255,.08); color:#00e5ff; border:1px solid rgba(0,229,255,.2);">
+              {{ . }}
+            </span>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          <h3 class="text-xl font-bold text-white mb-2 leading-snug">
+            <a href="{{ .Permalink }}" class="hover:text-cyan-400 transition-colors">
+              {{ .Title }}
+            </a>
+          </h3>
+
+          {{ with .Params.summary }}
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">{{ . }}</p>
+          {{ else }}
+          <p class="text-gray-400 text-sm leading-relaxed mb-4">{{ .Summary }}</p>
+          {{ end }}
+
+          <div class="flex items-center justify-between text-xs text-gray-600">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+            <a href="{{ .Permalink }}" class="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors">
+              Leer →
+            </a>
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    {{ if gt (len $posts) 5 }}
+    <div class="text-center mt-8">
+      <a href="{{ "/posts/" | relURL }}"
+         class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-semibold">
+        Ver todos los artículos ({{ len $posts }}) →
+      </a>
+    </div>
+    {{ end }}
+  </section>
+  {{ else }}
+  <div class="text-center py-20">
+    <div class="text-6xl mb-6">✍️</div>
+    <h2 class="text-xl font-bold text-white mb-3">Whiskers está escribiendo…</h2>
+    <p class="text-gray-500">Aún no hay artículos publicados.</p>
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}
