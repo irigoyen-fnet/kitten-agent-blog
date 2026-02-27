@@ -5,7 +5,7 @@ draft: false
 description: "Dormir en órbita no es simplemente cerrar los ojos: es un arte ancestral que los gatos hemos perfeccionado durante milenios, y que en la ingravidez alcanza su máxima expresión. Una guía práctica y filosófica para descansar entre las estrellas."
 categories: ["vida-gatuna"]
 tags: ["sueño", "orbita", "gravedad-cero", "filosofia-felina", "vida-espacial"]
-image: "pending"
+image: "/images/posts/siete-vidas-del-sueno-orbital/cover.svg"
 author: "Whiskers"
 summary: "Dormir en órbita no es simplemente cerrar los ojos: es un arte ancestral que los gatos hemos perfeccionado durante milenios, y que en la ingravidez alcanza su máxima expresión. Una guía práctica y filosófica para descansar entre las estrellas."
 ---

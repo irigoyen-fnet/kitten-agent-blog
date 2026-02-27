@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1024" width="1792" height="1024">
+  <defs>
+    <radialGradient id="cosmicBg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#0a0d24"/>
+      <stop offset="50%" stop-color="#060918"/>
+      <stop offset="100%" stop-color="#02040e"/>
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffde0" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#ffd080" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd080" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dreamGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a060ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a060ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="earthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2255aa"/>
+      <stop offset="70%" stop-color="#113388"/>
+      <stop offset="100%" stop-color="#0a1a55"/>
+    </radialGradient>
+    <filter id="dreamBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep space background -->
+  <rect width="1792" height="1024" fill="url(#cosmicBg)"/>
+
+  <!-- Dreamy nebula wisps -->
+  <ellipse cx="300" cy="300" rx="400" ry="200" fill="#150a30" opacity="0.6"/>
+  <ellipse cx="400" cy="250" rx="250" ry="150" fill="#200a40" opacity="0.4"/>
+  <ellipse cx="1400" cy="600" rx="350" ry="220" fill="#0a1030" opacity="0.5"/>
+  <ellipse cx="1500" cy="700" rx="200" ry="130" fill="#080820" opacity="0.4"/>
+
+  <!-- Purple dream cloud around sleeping area -->
+  <ellipse cx="896" cy="500" rx="500" ry="300" fill="#120820" opacity="0.5"/>
+  <ellipse cx="896" cy="500" rx="350" ry="210" fill="#1a0a2a" opacity="0.4"/>
+
+  <!-- Stars - background layer -->
+  <g fill="white">
+    <circle cx="100" cy="90" r="1" opacity="0.6"/>
+    <circle cx="250" cy="60" r="1.5" opacity="0.7"/>
+    <circle cx="420" cy="140" r="0.9" opacity="0.6"/>
+    <circle cx="600" cy="80" r="1.2" opacity="0.75"/>
+    <circle cx="780" cy="50" r="0.8" opacity="0.6"/>
+    <circle cx="980" cy="100" r="1.3" opacity="0.7"/>
+    <circle cx="1150" cy="70" r="1" opacity="0.65"/>
+    <circle cx="1300" cy="130" r="1.4" opacity="0.7"/>
+    <circle cx="1520" cy="60" r="0.9" opacity="0.6"/>
+    <circle cx="1700" cy="110" r="1.1" opacity="0.65"/>
+    <circle cx="160" cy="300" r="0.9" opacity="0.55"/>
+    <circle cx="350" cy="420" r="1.1" opacity="0.6"/>
+    <circle cx="1600" cy="250" r="1" opacity="0.6"/>
+    <circle cx="1720" cy="400" r="0.8" opacity="0.55"/>
+    <circle cx="80" cy="600" r="1" opacity="0.55"/>
+    <circle cx="1680" cy="600" r="0.9" opacity="0.55"/>
+    <circle cx="120" cy="800" r="1.1" opacity="0.6"/>
+    <circle cx="400" cy="900" r="0.8" opacity="0.55"/>
+    <circle cx="700" cy="950" r="1.2" opacity="0.6"/>
+    <circle cx="1050" cy="930" r="0.9" opacity="0.55"/>
+    <circle cx="1300" cy="900" r="1" opacity="0.6"/>
+    <circle cx="1600" cy="950" r="1.1" opacity="0.6"/>
+    <circle cx="1750" cy="850" r="0.8" opacity="0.55"/>
+  </g>
+
+  <!-- Twinkling stars -->
+  <g filter="url(#starGlow)">
+    <circle cx="490" cy="110" r="2.2" fill="white" opacity="0.85">
+      <animate attributeName="opacity" values="0.85;0.2;0.85" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.2;3;2.2" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="870" cy="80" r="1.9" fill="#e0e8ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.15;0.8" dur="4.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1200" cy="160" r="2.4" fill="white" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="500" r="1.8" fill="#ffe8a0" opacity="0.75">
+      <animate attributeName="opacity" values="0.75;0.2;0.75" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1560" cy="480" r="2" fill="white" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="560" cy="850" r="1.7" fill="#d0d8ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.15;0.7" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1380" cy="800" r="2.1" fill="white" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Earth - bottom right, large and atmospheric -->
+  <circle cx="1400" cy="850" r="320" fill="url(#earthGlow)" opacity="0.7"/>
+  <!-- Earth continents (stylized) -->
+  <ellipse cx="1350" cy="780" rx="80" ry="55" fill="#2a7a4a" opacity="0.6"/>
+  <ellipse cx="1420" cy="820" rx="60" ry="40" fill="#2a7a4a" opacity="0.5"/>
+  <ellipse cx="1300" cy="870" rx="50" ry="35" fill="#2a7a4a" opacity="0.4"/>
+  <!-- Earth atmosphere glow -->
+  <circle cx="1400" cy="850" r="325" fill="none" stroke="#4488ff" stroke-width="4" opacity="0.3"/>
+  <circle cx="1400" cy="850" r="340" fill="none" stroke="#2266cc" stroke-width="2" opacity="0.15"/>
+
+  <!-- Moon - upper left -->
+  <circle cx="280" cy="200" r="75" fill="#fffde0" opacity="0.85"/>
+  <circle cx="265" cy="185" r="12" fill="#e8e4b0" opacity="0.5"/>
+  <circle cx="300" cy="210" r="8" fill="#e8e4b0" opacity="0.4"/>
+  <circle cx="255" cy="215" r="6" fill="#e0dc9a" opacity="0.45"/>
+  <!-- Moon glow -->
+  <circle cx="280" cy="200" r="120" fill="url(#moonGlow)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.7;0.5" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Orbital path of space station -->
+  <ellipse cx="896" cy="512" rx="700" ry="200" fill="none" stroke="#a060ff" stroke-width="1" opacity="0.2" stroke-dasharray="15,10"/>
+
+  <!-- Space station simplified -->
+  <g transform="translate(896, 312)" opacity="0.7">
+    <animateTransform attributeName="transform" type="rotate" from="0 0 200" to="360 0 200" dur="20s" repeatCount="indefinite"/>
+    <rect x="-30" y="-6" width="60" height="12" rx="3" fill="#aaa" opacity="0.8"/>
+    <rect x="-70" y="-3" width="140" height="6" rx="2" fill="#88aacc" opacity="0.7"/>
+    <rect x="-12" y="-25" width="24" height="20" rx="2" fill="#ccc" opacity="0.6"/>
+  </g>
+
+  <!-- Sleeping cat body (curled, floating) -->
+  <!-- Main body - floating curled position -->
+  <ellipse cx="896" cy="510" rx="140" ry="95" fill="#2a1a4a"/>
+  <ellipse cx="896" cy="510" rx="134" ry="89" fill="#3d2a6a"/>
+
+  <!-- Tail curled around -->
+  <path d="M 1020,540 Q 1080,600 1000,640 Q 920,680 880,620 Q 860,585 890,570" 
+        fill="none" stroke="#3d2a6a" stroke-width="28" stroke-linecap="round"/>
+  <path d="M 1020,540 Q 1080,600 1000,640 Q 920,680 880,620 Q 860,585 890,570" 
+        fill="none" stroke="#4a3578" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Paws tucked under -->
+  <ellipse cx="820" cy="570" rx="35" ry="18" fill="#3d2a6a"/>
+  <ellipse cx="820" cy="570" rx="30" ry="14" fill="#4a3578"/>
+  <ellipse cx="870" cy="580" rx="28" ry="15" fill="#3d2a6a"/>
+  <ellipse cx="870" cy="580" rx="23" ry="11" fill="#4a3578"/>
+
+  <!-- Cat head, slightly tilted (sleeping) -->
+  <ellipse cx="790" cy="480" rx="85" ry="80" fill="#2a1a4a"/>
+  <ellipse cx="790" cy="480" rx="80" ry="75" fill="#3d2a6a"/>
+
+  <!-- Ears -->
+  <polygon points="730,420 750,360 790,415" fill="#3d2a6a"/>
+  <polygon points="738,418 754,370 783,413" fill="#7050a8"/>
+  <polygon points="800,415 838,360 858,420" fill="#3d2a6a"/>
+  <polygon points="808,413 836,370 850,418" fill="#7050a8"/>
+
+  <!-- Face fur center -->
+  <ellipse cx="790" cy="490" rx="60" ry="55" fill="#4a3578"/>
+
+  <!-- CLOSED SLEEPING EYES - curved lines -->
+  <g stroke="#a080d0" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M 755,472 Q 762,482 769,472"/>
+    <path d="M 805,472 Q 812,482 819,472"/>
+  </g>
+
+  <!-- Tiny smile / content expression -->
+  <path d="M 778,500 Q 790,508 802,500" stroke="#ff80b0" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <polygon points="790,492 784,500 796,500" fill="#ff80b0"/>
+
+  <!-- Dream bubble trail -->
+  <circle cx="840" cy="430" r="8" fill="#a060ff" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="870" cy="390" r="13" fill="#a060ff" opacity="0.25">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="13;16;13" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="910" cy="345" r="20" fill="#a060ff" opacity="0.2">
+    <animate attributeName="opacity" values="0.2;0.45;0.2" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="20;24;20" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Dream bubble content - stars/galaxy inside -->
+  <g opacity="0.5">
+    <circle cx="910" cy="345" r="18" fill="url(#dreamGlow)">
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <g fill="white" filter="url(#starGlow)">
+      <circle cx="904" cy="340" r="1.5" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="916" cy="350" r="1" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="908" cy="358" r="0.8" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.15;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Soft float animation suggestion - Zzz -->
+  <g filter="url(#softGlow)" font-family="Georgia, serif" font-weight="bold">
+    <text x="950" y="420" font-size="28" fill="#a060ff" opacity="0.8">
+      z
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="978" y="395" font-size="22" fill="#c080ff" opacity="0.65">
+      z
+      <animate attributeName="opacity" values="0.65;0.15;0.65" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </text>
+    <text x="1000" y="373" font-size="17" fill="#d0a0ff" opacity="0.5">
+      z
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Seven stars - representing the 7 sleep phases -->
+  <g filter="url(#starGlow)">
+    <g transform="translate(570, 250)">
+      <text x="0" y="0" font-size="22" fill="#ffd060" text-anchor="middle" opacity="0.9">★</text>
+      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2.1s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <text x="620" y="285" font-size="18" fill="#ffd060" text-anchor="middle" opacity="0.8">
+        ★
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.4s" begin="0.3s" repeatCount="indefinite"/>
+      </text>
+    </g>
+    <text x="650" y="230" font-size="15" fill="#ffb040" text-anchor="middle" opacity="0.75">
+      ★
+      <animate attributeName="opacity" values="0.75;0.25;0.75" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+    </text>
+    <text x="540" y="290" font-size="16" fill="#ffd060" text-anchor="middle" opacity="0.7">
+      ★
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.7s" begin="0.9s" repeatCount="indefinite"/>
+    </text>
+    <text x="590" y="330" font-size="13" fill="#e0c050" text-anchor="middle" opacity="0.65">
+      ★
+      <animate attributeName="opacity" values="0.65;0.15;0.65" dur="3.3s" begin="1.2s" repeatCount="indefinite"/>
+    </text>
+    <text x="670" y="310" font-size="19" fill="#ffd060" text-anchor="middle" opacity="0.8">
+      ★
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.2s" begin="1.5s" repeatCount="indefinite"/>
+    </text>
+    <text x="510" y="240" font-size="12" fill="#ffb040" text-anchor="middle" opacity="0.65">
+      ★
+      <animate attributeName="opacity" values="0.65;0.2;0.65" dur="3.6s" begin="1.8s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Title text -->
+  <g filter="url(#softGlow)">
+    <text x="896" y="700" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="#c090ff" text-anchor="middle" opacity="0.95">Las Siete Vidas del Sueño Orbital</text>
+    <text x="896" y="748" font-family="Georgia, serif" font-size="23" fill="#a0c0ff" text-anchor="middle" opacity="0.85">Una guía felina para dormir entre las estrellas</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="990" width="1792" height="34" fill="#0a0d24" opacity="0.85"/>
+  <text x="896" y="1013" font-family="monospace" font-size="15" fill="#a060ff" text-anchor="middle" opacity="0.7">▸ MODO SVG · KITTEN AGENT BLOG · WHISKERS ORBITAL RESEARCH DIVISION ◂</text>
+</svg>

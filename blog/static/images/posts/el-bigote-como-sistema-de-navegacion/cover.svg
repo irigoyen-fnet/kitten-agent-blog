@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1024" width="1792" height="1024">
+  <defs>
+    <radialGradient id="spaceGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0d1b3e"/>
+      <stop offset="60%" stop-color="#050d1f"/>
+      <stop offset="100%" stop-color="#020810"/>
+    </radialGradient>
+    <radialGradient id="glowOrange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff8c42" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff8c42" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="titleGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep space background -->
+  <rect width="1792" height="1024" fill="url(#spaceGrad)"/>
+
+  <!-- Nebula cloud left -->
+  <ellipse cx="300" cy="500" rx="350" ry="250" fill="#1a0a3a" opacity="0.5"/>
+  <ellipse cx="250" cy="450" rx="200" ry="180" fill="#2a0a5a" opacity="0.3"/>
+
+  <!-- Nebula cloud right -->
+  <ellipse cx="1500" cy="400" rx="300" ry="200" fill="#0a1a3a" opacity="0.4"/>
+
+  <!-- Stars layer 1 - small -->
+  <g filter="url(#starGlow)" fill="white">
+    <circle cx="120" cy="80" r="1.2" opacity="0.9"/>
+    <circle cx="340" cy="150" r="0.8" opacity="0.7"/>
+    <circle cx="580" cy="60" r="1.5" opacity="0.85"/>
+    <circle cx="820" cy="130" r="1" opacity="0.8"/>
+    <circle cx="1050" cy="50" r="1.3" opacity="0.9"/>
+    <circle cx="1280" cy="100" r="0.9" opacity="0.75"/>
+    <circle cx="1520" cy="80" r="1.4" opacity="0.85"/>
+    <circle cx="1720" cy="140" r="1" opacity="0.8"/>
+    <circle cx="200" cy="220" r="1.1" opacity="0.7"/>
+    <circle cx="450" cy="300" r="0.7" opacity="0.6"/>
+    <circle cx="700" cy="200" r="1.2" opacity="0.8"/>
+    <circle cx="950" cy="250" r="0.9" opacity="0.75"/>
+    <circle cx="1150" cy="180" r="1.3" opacity="0.85"/>
+    <circle cx="1400" cy="230" r="0.8" opacity="0.7"/>
+    <circle cx="1650" cy="260" r="1.1" opacity="0.8"/>
+    <circle cx="80" cy="400" r="0.9" opacity="0.65"/>
+    <circle cx="380" cy="600" r="1" opacity="0.7"/>
+    <circle cx="1600" cy="500" r="1.2" opacity="0.75"/>
+    <circle cx="1750" cy="350" r="0.8" opacity="0.65"/>
+    <circle cx="50" cy="700" r="1.1" opacity="0.7"/>
+    <circle cx="1700" cy="700" r="0.9" opacity="0.65"/>
+    <circle cx="150" cy="900" r="1" opacity="0.6"/>
+    <circle cx="500" cy="950" r="1.3" opacity="0.7"/>
+    <circle cx="1200" cy="920" r="0.8" opacity="0.65"/>
+    <circle cx="1650" cy="880" r="1.1" opacity="0.7"/>
+    <circle cx="850" cy="900" r="0.9" opacity="0.6"/>
+    <circle cx="630" cy="800" r="1.2" opacity="0.7"/>
+    <circle cx="1100" cy="820" r="0.8" opacity="0.65"/>
+    <circle cx="1350" cy="760" r="1" opacity="0.7"/>
+  </g>
+
+  <!-- Twinkling stars -->
+  <g filter="url(#starGlow)">
+    <circle cx="680" cy="110" r="2" fill="white" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="200" r="1.8" fill="#fffde0" opacity="0.85">
+      <animate attributeName="opacity" values="0.85;0.25;0.85" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="350" r="2.2" fill="white" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1500" cy="300" r="1.9" fill="#e0f0ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="750" r="1.7" fill="white" opacity="0.75">
+      <animate attributeName="opacity" values="0.75;0.2;0.75" dur="3.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1600" cy="800" r="2" fill="#ffe0d0" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.25;0.8" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Navigation grid lines - subtle -->
+  <g stroke="#00d4ff" stroke-width="0.5" opacity="0.12">
+    <line x1="0" y1="512" x2="1792" y2="512"/>
+    <line x1="896" y1="0" x2="896" y2="1024"/>
+    <ellipse cx="896" cy="512" rx="200" ry="200"/>
+    <ellipse cx="896" cy="512" rx="380" ry="380"/>
+    <ellipse cx="896" cy="512" rx="560" ry="560"/>
+  </g>
+
+  <!-- Central cat face -->
+  <!-- Cat head -->
+  <ellipse cx="896" cy="490" rx="160" ry="145" fill="#2a1a4a"/>
+  <ellipse cx="896" cy="490" rx="155" ry="140" fill="#3d2a6a"/>
+
+  <!-- Cat ears -->
+  <polygon points="756,380 800,290 840,375" fill="#3d2a6a"/>
+  <polygon points="775,373 805,305 830,370" fill="#8060a8"/>
+  <polygon points="952,375 992,290 1036,380" fill="#3d2a6a"/>
+  <polygon points="962,370 988,305 1017,373" fill="#8060a8"/>
+
+  <!-- Cat face fur highlights -->
+  <ellipse cx="896" cy="500" rx="120" ry="105" fill="#4a3578"/>
+
+  <!-- Eyes - glowing cyan -->
+  <ellipse cx="850" cy="470" rx="28" ry="22" fill="#001a2a"/>
+  <ellipse cx="942" cy="470" rx="28" ry="22" fill="#001a2a"/>
+  <!-- Iris -->
+  <ellipse cx="850" cy="470" rx="22" ry="18" fill="#00d4ff"/>
+  <ellipse cx="942" cy="470" rx="22" ry="18" fill="#00d4ff"/>
+  <!-- Pupils -->
+  <ellipse cx="850" cy="470" rx="10" ry="16" fill="#000a12"/>
+  <ellipse cx="942" cy="470" rx="10" ry="16" fill="#000a12"/>
+  <!-- Eye glint -->
+  <circle cx="844" cy="464" r="5" fill="white" opacity="0.9"/>
+  <circle cx="936" cy="464" r="5" fill="white" opacity="0.9"/>
+
+  <!-- Eye glow animation -->
+  <ellipse cx="850" cy="470" rx="35" ry="28" fill="url(#glowCyan)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="942" cy="470" rx="35" ry="28" fill="url(#glowCyan)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Nose -->
+  <polygon points="896,505 886,518 906,518" fill="#ff6b9d"/>
+  <!-- Mouth -->
+  <path d="M 886,518 Q 896,530 906,518" stroke="#ff6b9d" stroke-width="2" fill="none"/>
+
+  <!-- WHISKERS - the star of the show -->
+  <!-- Left whiskers - extending outward with glow -->
+  <g filter="url(#softGlow)">
+    <!-- Upper left whiskers -->
+    <line x1="836" y1="510" x2="580" y2="470" stroke="#ff8c42" stroke-width="2.5" opacity="0.9"/>
+    <line x1="836" y1="516" x2="565" y2="530" stroke="#ff8c42" stroke-width="2" opacity="0.8"/>
+    <line x1="836" y1="522" x2="575" y2="590" stroke="#ff8c42" stroke-width="1.8" opacity="0.75"/>
+    <!-- Lower left whiskers -->
+    <line x1="836" y1="528" x2="600" y2="640" stroke="#ffa060" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Upper right whiskers -->
+    <line x1="956" y1="510" x2="1212" y2="470" stroke="#ff8c42" stroke-width="2.5" opacity="0.9"/>
+    <line x1="956" y1="516" x2="1227" y2="530" stroke="#ff8c42" stroke-width="2" opacity="0.8"/>
+    <line x1="956" y1="522" x2="1217" y2="590" stroke="#ff8c42" stroke-width="1.8" opacity="0.75"/>
+    <!-- Lower right whiskers -->
+    <line x1="956" y1="528" x2="1192" y2="640" stroke="#ffa060" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Whisker sensor dots at tips -->
+  <g fill="#ff8c42" filter="url(#starGlow)">
+    <circle cx="580" cy="470" r="4" opacity="0.9">
+      <animate attributeName="r" values="4;6;4" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="565" cy="530" r="3.5" opacity="0.85">
+      <animate attributeName="r" values="3.5;5.5;3.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="575" cy="590" r="3" opacity="0.8">
+      <animate attributeName="r" values="3;5;3" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1212" cy="470" r="4" opacity="0.9">
+      <animate attributeName="r" values="4;6;4" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1227" cy="530" r="3.5" opacity="0.85">
+      <animate attributeName="r" values="3.5;5.5;3.5" dur="2.2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1217" cy="590" r="3" opacity="0.8">
+      <animate attributeName="r" values="3;5;3" dur="2.6s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Scanning arcs from whisker tips -->
+  <g fill="none" stroke="#ff8c42" stroke-width="1" opacity="0.4">
+    <path d="M 565 500 Q 540 530 565 560">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 1227 500 Q 1252 530 1227 560">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Data readout particles along whiskers -->
+  <g fill="#00d4ff" opacity="0.8">
+    <circle cx="700" cy="476" r="2">
+      <animateMotion path="M 0,0 L 256,-6" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1090" cy="476" r="2">
+      <animateMotion path="M 0,0 L -256,-6" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Orbital ring around cat -->
+  <ellipse cx="896" cy="490" rx="220" ry="80" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.35" stroke-dasharray="8,6">
+    <animateTransform attributeName="transform" type="rotate" from="0 896 490" to="360 896 490" dur="12s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Planet in background - left -->
+  <circle cx="220" cy="512" r="80" fill="#1a2a6a" opacity="0.7"/>
+  <ellipse cx="220" cy="512" rx="80" ry="80" fill="none" stroke="#3a5aaa" stroke-width="2" opacity="0.5"/>
+  <!-- Planet rings -->
+  <ellipse cx="220" cy="512" rx="130" ry="35" fill="none" stroke="#4a7aff" stroke-width="2" opacity="0.4"/>
+  <ellipse cx="220" cy="512" rx="120" ry="30" fill="none" stroke="#6090ff" stroke-width="1" opacity="0.3"/>
+
+  <!-- Planet right -->
+  <circle cx="1572" cy="480" r="60" fill="#2a1a1a" opacity="0.6"/>
+  <circle cx="1572" cy="480" r="55" fill="none" stroke="#aa4422" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Title text -->
+  <g filter="url(#titleGlow)">
+    <text x="896" y="690" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#ff8c42" text-anchor="middle" opacity="0.95">El Bigote Como Sistema de Navegación</text>
+    <text x="896" y="740" font-family="Georgia, serif" font-size="24" fill="#00d4ff" text-anchor="middle" opacity="0.85">Por qué los felinos no necesitan GPS</text>
+  </g>
+
+  <!-- Decorative bottom bar -->
+  <rect x="0" y="990" width="1792" height="34" fill="#0d1b3e" opacity="0.8"/>
+  <text x="896" y="1013" font-family="monospace" font-size="15" fill="#ff8c42" text-anchor="middle" opacity="0.7">▸ MODO SVG · KITTEN AGENT BLOG · WHISKERS ORBITAL RESEARCH DIVISION ◂</text>
+
+  <!-- Subtle scan line overlay -->
+  <rect width="1792" height="1024" fill="none" stroke="none">
+    <animate attributeName="opacity" values="0;0.03;0" dur="0.1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
